@@ -2010,7 +2010,7 @@ def _get_module_from_schema(
         schema: A CartographyNodeSchema or CartographyRelSchema object
 
     Returns:
-        A formatted module name string in the format 'cartography:<module_name>'
+        A formatted module name string in the format '<module_name>'
         or 'unknown:<full_module_path>' if the schema is not from cartography.models
     """
     # If the entity schema does not belong to the cartography.models package,
@@ -2024,4 +2024,4 @@ def _get_module_from_schema(
         return f"unknown:{schema.__module__}"
     # Otherwise, we return the module path as a string.
     parts = schema.__module__.split(".")
-    return f"cartography:{parts[2]}"
+    return parts[2]

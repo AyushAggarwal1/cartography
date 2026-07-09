@@ -245,7 +245,7 @@ def attach_public_image_to_target_image(
     WITH p, img, update_tag WHERE img IS NOT NULL
     MERGE (img)-[r:BUILT_ON]->(p)
     ON CREATE SET r.firstseen = timestamp()
-    SET r._module_name = 'cartography:docker_scout',
+    SET r._module_name = 'docker_scout',
         r._module_version = $module_version,
         r.lastupdated = update_tag
     RETURN count(img) AS total_matches

@@ -221,7 +221,7 @@ def _load_okta_groups(
     new_group.external_id = group_data.external_id,
     new_group.lastupdated = $okta_update_tag,
     new_group:UserGroup,
-    new_group._module_name = "cartography:okta",
+    new_group._module_name = "okta",
     new_group._ont_name = group_data.name,
     new_group._ont_description = group_data.description,
     new_group._ont_source = "okta"
